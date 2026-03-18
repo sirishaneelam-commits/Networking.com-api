@@ -5,9 +5,9 @@
   "license": "ISC",
   "author": "",
   "type": "commonjs",
-  "main": "index.js",
+  "main": "mongodb.js",
   "scripts": {
-      "start": "node index.js"
+      "start": "node mongodb.js"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
