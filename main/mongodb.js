@@ -5,8 +5,8 @@ const dotenv = require('dotenv');
 const cors = require('cors');
 
 // Corrected paths for Render
-const UserRoutes = require('./routes/Router.js');
-const CardRoutes = require('./routes/CardRouter.js');
+const UserRoutes = require('../routes/Router.js');
+const CardRoutes = require('../routes/CardRouter.js');
 
 // Load environment variables
 dotenv.config();  
