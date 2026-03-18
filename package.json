@@ -7,7 +7,7 @@
   "type": "commonjs",
   "main": "mongodb.js",
   "scripts": {
-       "start": "node main/mongodb.js"
+        "start": "node main/mongodb.js"
   },
   "dependencies": {
     "bcryptjs": "^3.0.3",
