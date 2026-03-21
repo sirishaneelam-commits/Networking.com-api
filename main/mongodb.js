@@ -16,9 +16,27 @@ const app = express();
 
 console.log("Starting server…");
 
-// Enable CORS for frontend
+// ✅ Improved CORS setup to allow production + all Vercel preview URLs
+const allowedOrigins = [
+  "https://networking-com-frontend-ofly.vercel.app", // production
+];
+
 app.use(cors({
-  origin: 'https://networking-com-frontend-ofly-sirishaneelam-commits-projects.vercel.app', // change to your frontend URL in production
+  origin: function (origin, callback) {
+    // allow requests with no origin (like Postman or server-to-server)
+    if (!origin) return callback(null, true);
+
+    // allow production or any preview URL matching this project
+    if (
+      allowedOrigins.includes(origin) ||
+      /^https:\/\/networking-com-frontend-ofly.*\.vercel\.app$/.test(origin)
+    ) {
+      return callback(null, true);
+    }
+
+    // reject any other origin
+    return callback(new Error("Not allowed by CORS"));
+  },
   methods: ['GET','POST','PUT','DELETE','OPTIONS'],
   allowedHeaders: ['Content-Type','Authorization'],
   credentials: true
