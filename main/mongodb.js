@@ -18,7 +18,7 @@ console.log("Starting server…");
 
 // Enable CORS for frontend
 app.use(cors({
-  origin: 'https://networking-com-frontend-ofly.vercel.app', // change to your frontend URL in production
+  origin: 'https://networking-com-frontend-ofly-kz0mzbj60.vercel.app', // change to your frontend URL in production
   methods: ['GET','POST','PUT','DELETE','OPTIONS'],
   allowedHeaders: ['Content-Type','Authorization'],
   credentials: true
